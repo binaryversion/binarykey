@@ -70,15 +70,17 @@ angular.module('starter.controllers', [])
   };
   
     $scope.doPrint2 = function() {
+    	alert('print2');
+    	/*
 	//FE:85:ED:DE:72:5B
 	cordova.plugins.zbtprinter.print("FE:85:ED:DE:72:5B", "! U1 setvar "device.languages" "line_print"\r\nTEXT 11 0 0 0   ***Print test***\r\nPRINT\r\n",
-    function(success) { 
-        alert("Print ok"); 
-    }, function(fail) { 
-        alert(fail); 
-    }
-);
-  };
+		function(success) { 
+			alert("Print ok"); 
+		}, function(fail) { 
+			alert(fail); 
+		}
+	);*/
+    };
 })
 
 .controller('PlaylistsCtrl', function($scope) {
