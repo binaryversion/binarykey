@@ -1,0 +1,13 @@
+/* Empty. Add your own CSS if you like */
+.platform-android .menu .scroll-content {
+	top: 42px;
+}
+.platform-android .menu-content {
+	box-shadow: none;
+}
+.platform-android.menu-open ion-pane.pane{
+	background-color: black;
+}
+.platform-android.menu-open ion-view.pane{
+	opacity:0.5;
+}
