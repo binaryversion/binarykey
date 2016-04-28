@@ -1,0 +1,21 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Print</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePrint()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doPrint()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Texto</span>
+          <input type="text" ng-model="printData.buffer" value="master">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Print</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
