@@ -63,17 +63,21 @@ angular.module('starter.controllers', [])
   };
   
   $scope.doPrint = function() {
-    console.log('Printing...'+ $scope.printData.buffer);
 	//FE:85:ED:DE:72:5B
 	bluetoothSerial.connect("FE:85:ED:DE:72:5B", connectSuccess, connectFailure);
 	bluetoothSerial.write("hello, world", connectSuccess, connectFailure);
 	bluetoothSerial.disconnect();
-	
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closePrint();
-    }, 1000);
+  };
+  
+    $scope.doPrint2 = function() {
+	//FE:85:ED:DE:72:5B
+	cordova.plugins.zbtprinter.print("FE:85:ED:DE:72:5B", "! U1 setvar "device.languages" "line_print"\r\nTEXT 11 0 0 0   ***Print test***\r\nPRINT\r\n",
+    function(success) { 
+        alert("Print ok"); 
+    }, function(fail) { 
+        alert(fail); 
+    }
+);
   };
 })
 
