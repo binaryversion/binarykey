@@ -72,6 +72,12 @@ angular.module('starter.controllers', [])
   };
   
     $scope.doPrint2 = function() {
+	cordova.plugins.zbtprinter.find(function(mac) { 
+			alert(mac); 
+		}, function(fail) { 
+			alert(fail); 
+		}
+	);
     	alert('print2');
     	/*
 	//FE:85:ED:DE:72:5B
