@@ -64,8 +64,10 @@ angular.module('starter.controllers', [])
   
   $scope.doPrint = function() {
 	//FE:85:ED:DE:72:5B
+	var ps2_start = "\x1B\x40\x1B\x63\x34\x02\x1B\x74\x03";
+	var ps2_end = "\x1D\x56\x01";
 	bluetoothSerial.connect("FE:85:ED:DE:72:5B", connectSuccess, connectFailure);
-	bluetoothSerial.write("hello, world", connectSuccess, connectFailure);
+	bluetoothSerial.write(ps2_start +"\n\n\n hello, world \n\n\n\n\n\n"+ ps2_end, connectSuccess, connectFailure);
 	bluetoothSerial.disconnect();
   };
   
